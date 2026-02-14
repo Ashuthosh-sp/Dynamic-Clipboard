@@ -7,9 +7,9 @@ jest.mock('firebase/compat/app', () => {
   };
   const storageMock = {
     ref: jest.fn(() => ({
-      put: jest.fn(),
-      getDownloadURL: jest.fn(),
-      delete: jest.fn(),
+      put: jest.fn().mockResolvedValue({}),
+      getDownloadURL: jest.fn().mockResolvedValue('https://example.com/file.txt'),
+      delete: jest.fn().mockResolvedValue({}),
     })),
   };
   const app = {

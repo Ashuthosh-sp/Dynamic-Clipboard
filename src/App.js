@@ -43,7 +43,7 @@ const App = () => {
             { includeMetadataChanges: true },
             (docSnap) => {
                 const docData = docSnap.data();
-                if (docData && docData.data != null) {
+                if (docData && docData.data !== undefined && docData.data !== null) {
                     setData(docData.data);
                 }
             });
@@ -55,7 +55,7 @@ const App = () => {
             { includeMetadataChanges: true },
             (docSnap) => {
                 const docData = docSnap.data();
-                if (docData && docData.files) {
+                if (docData && docData.files !== undefined && docData.files !== null) {
                     setFiles(docData.files);
                 }
             });
