@@ -39,11 +39,121 @@
 .container {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 .container textarea {
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
+    min-height: 50vh;
     border: none;
+    padding: 16px;
+    font-size: 16px;
+    resize: vertical;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.file-section {
+    border-top: 2px solid #e0e0e0;
+    padding: 16px;
+    background: #fafafa;
+}
+.file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.file-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+.upload-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #4285f4;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.upload-btn:hover {
+    background: #3367d6;
+}
+.upload-btn input[type="file"] {
+    display: none;
+}
+.no-files {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: white;
+}
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     overflow: hidden;
+}
+.file-name {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.file-name:hover {
+    text-decoration: underline;
+}
+.file-size {
+    color: #999;
+    font-size: 13px;
+    white-space: nowrap;
+}
+.file-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.download-btn {
+    padding: 4px 10px;
+    background: #34a853;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 13px;
+}
+.download-btn:hover {
+    background: #2d8e47;
+}
+.delete-btn {
+    padding: 4px 10px;
+    background: #ea4335;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.delete-btn:hover {
+    background: #c5221f;
 }
